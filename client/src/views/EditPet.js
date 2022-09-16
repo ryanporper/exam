@@ -1,10 +1,7 @@
-import { useEffect, useState } from 'react';
-import { useNavigate, useParams, Link } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import { useNavigate, useParams, Link } from "react-router-dom";
 
-import {
-  getPetById,
-  updatePetById,
-} from '../services/internalApiService';
+import { getPetById, updatePetById } from "../services/internalApiService";
 
 export const EditPet = (props) => {
   const { id } = useParams();
@@ -16,7 +13,6 @@ export const EditPet = (props) => {
   const [skill2, setSkill2] = useState("");
   const [skill3, setSkill3] = useState("");
   const [errors, setErrors] = useState(null);
-
 
   useEffect(() => {
     getPetById(id)
@@ -42,12 +38,12 @@ export const EditPet = (props) => {
       desc,
       skill1,
       skill2,
-      skill3     
+      skill3,
     };
 
     updatePetById(id, editedPet)
       .then((updatedPet) => {
-        console.log('updatedPet:', updatedPet);
+        console.log("updatedPet:", updatedPet);
         navigate(`/pets`);
       })
       .catch((error) => {
@@ -61,10 +57,7 @@ export const EditPet = (props) => {
       <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top justify-content-center mb-4">
         <h1 className="navbar-brand mb-0">Pet Shelter</h1>
         <div className="navbar-nav justify-content-between">
-          <Link
-            to="/pets"
-            className="btn btn-sm btn-outline-primary mx-1"
-          >
+          <Link to="/pets" className="btn btn-sm btn-outline-primary mx-1">
             Home
           </Link>
         </div>
@@ -74,7 +67,7 @@ export const EditPet = (props) => {
           <div className="form-group">
             <label className="h6">Pet Name:</label>
             {errors?.petName && (
-                <span style={{ color: 'red' }}> {errors?.petName?.message}</span>
+              <span style={{ color: "red" }}> {errors?.petName?.message}</span>
             )}
             <input
               onChange={(event) => {
@@ -88,7 +81,7 @@ export const EditPet = (props) => {
           <div className="form-group">
             <label className="h6">Pet Type:</label>
             {errors?.petType && (
-                <span style={{ color: 'red' }}> {errors?.petType?.message}</span>
+              <span style={{ color: "red" }}> {errors?.petType?.message}</span>
             )}
             <input
               onChange={(event) => {
@@ -102,7 +95,7 @@ export const EditPet = (props) => {
           <div className="form-group">
             <label className="h6">Description:</label>
             {errors?.desc && (
-                <span style={{ color: 'red' }}> {errors?.desc?.message}</span>
+              <span style={{ color: "red" }}> {errors?.desc?.message}</span>
             )}
             <input
               onChange={(event) => {
@@ -146,6 +139,10 @@ export const EditPet = (props) => {
               value={skill3}
             />
           </div>
+
+          <Link to="/pets" className="btn btn-outline-danger m-1">
+            Cancel
+          </Link>
 
           <button className="btn btn-success">Edit Pet</button>
         </form>

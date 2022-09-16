@@ -1,10 +1,7 @@
-import { useEffect, useState } from 'react';
-import { useNavigate, useParams, Link } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import { useNavigate, useParams, Link } from "react-router-dom";
 
-import {
-  deletePetById,
-  getPetById,
-} from '../services/internalApiService';
+import { deletePetById, getPetById } from "../services/internalApiService";
 
 export const ViewPet = (props) => {
   const [pet, setPet] = useState(null);
@@ -29,15 +26,14 @@ export const ViewPet = (props) => {
   const handleDeleteClick = () => {
     deletePetById(id)
       .then((deletedPet) => {
-        navigate('/pets');
+        navigate("/pets");
       })
       .catch((error) => {
         console.log(error);
       });
   };
 
-  const { petName, petType, desc, skill1, skill2, skill3} =
-    pet;
+  const { petName, petType, desc, skill1, skill2, skill3 } = pet;
 
   return (
     <div className="mx-auto">
@@ -58,14 +54,26 @@ export const ViewPet = (props) => {
         Adopt {petName}
       </button>
       <div className="w-100 mx-auto shadow mb-4 rounded border p-4">
-        <h4 className='mb-3'>Name: {petName}</h4>
-        <h4 className='mb-3'>Type: {petType}</h4>
-        <h4 className='mb-3'>Description: {desc}</h4>
-        <h4 className='mb-3'>Skills: </h4>
+        <h4 className="mb-3">Name: {petName}</h4>
+        <h4 className="mb-3">Type: {petType}</h4>
+        <h4 className="mb-3">Description: {desc}</h4>
+        <h4 className="mb-3">Skills: </h4>
         <ul className="list-group">
-          {skill1 && <li className="list-group-item"><h4>{skill1}</h4></li>}
-          {skill2 && <li className="list-group-item"><h4>{skill2}</h4></li>}
-          {skill3 && <li className="list-group-item"><h4>{skill3}</h4></li>}
+          {skill1 && (
+            <li className="list-group-item">
+              <h4>{skill1}</h4>
+            </li>
+          )}
+          {skill2 && (
+            <li className="list-group-item">
+              <h4>{skill2}</h4>
+            </li>
+          )}
+          {skill3 && (
+            <li className="list-group-item">
+              <h4>{skill3}</h4>
+            </li>
+          )}
         </ul>
       </div>
     </div>

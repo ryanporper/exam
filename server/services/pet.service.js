@@ -1,7 +1,7 @@
-const { Pet } = require('../models/pet.model');
+const { Pet } = require("../models/pet.model");
 
 const createPet = async (data) => {
-  console.log('service: createPet');
+  console.log("service: createPet");
 
   const pet = await Pet.create(data);
   return pet;
@@ -32,9 +32,7 @@ const updatePetById = async (id, data) => {
 };
 
 const createManyPets = async (documents) => {
-  const createPromises = documents.map((document) =>
-    createPet(document)
-  );
+  const createPromises = documents.map((document) => createPet(document));
   return Promise.allSettled(createPromises);
 };
 
