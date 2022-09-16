@@ -57,12 +57,12 @@ export const AllPets = (props) => {
                   <h4>{petType}</h4>
                 </td>
                 <td>
-                  <Link to={`/pets/${_id}`} className="btn btn-primary mx-1">
+                  <Link to={`/pets/${_id}`} className="btn btn-outline-primary mx-1">
                     Details
                   </Link>
                   <Link
                     to={`/pets/${_id}/edit`}
-                    className="btn btn-warning mx-1"
+                    className="btn btn-outline-warning mx-1"
                   >
                     Edit
                   </Link>

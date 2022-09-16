@@ -144,7 +144,7 @@ export const EditPet = (props) => {
             Cancel
           </Link>
 
-          <button className="btn btn-success">Edit Pet</button>
+          <button className="btn btn-outline-success">Edit Pet</button>
         </form>
       </div>
     </div>
