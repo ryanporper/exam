@@ -57,7 +57,7 @@ export const EditPet = (props) => {
   };
 
   return (
-    <div className="w-50 mx-auto">
+    <div className="mx-auto">
       <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top justify-content-center mb-4">
         <h1 className="navbar-brand mb-0">Pet Shelter</h1>
         <div className="navbar-nav justify-content-between">

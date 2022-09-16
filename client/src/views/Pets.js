@@ -20,7 +20,7 @@ export const AllPets = (props) => {
   }, []);
 
   return (
-    <div className="w-50 mx-auto text-center">
+    <div className="mx-auto">
       <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top justify-content-center mb-4">
         <h1 className="navbar-brand mb-0">Pet Shelter</h1>
         <div className="navbar-nav justify-content-between">
@@ -80,101 +80,3 @@ export const AllPets = (props) => {
 };
 
 export default AllPets;
-
-/*
-
-<div className="w-50 mx-auto text-center">
-        <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top justify-content-center mb-4">
-          <h1 className="navbar-brand mb-0">Favorite Authors</h1>
-          <div className="navbar-nav justify-content-between">
-            <Link
-              to="/authors/new"
-              className="btn btn-sm btn-outline-success mx-1"
-            >
-              Add An Author
-            </Link>
-          </div>
-        </nav>
-    
-        <table className="table table-striped">
-          <thead>
-            <tr>
-              <th>Author</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>{ name }</td>
-              <td> 
-              <button
-                  onClick={(e) => {
-                    handleDeleteClick(_id);
-                  }}
-                  className="btn btn-sm btn-outline-danger mx-1"
-                >
-                  Delete
-                </button>
-
-                <Link
-                  to={`/authors/${_id}/edit`}
-                  className="btn btn-sm btn-outline-warning mx-1"
-                >
-                  Edit
-                </Link>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-*/
-
-/*
-
-<div className="w-50 mx-auto text-center">
-        <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top justify-content-center mb-4">
-        <h1 className="navbar-brand mb-0">Favorite Authors</h1>
-        <div className="navbar-nav justify-content-between">
-          <Link
-            to="/authors/new"
-            className="btn btn-sm btn-outline-success mx-1"
-          >
-            Add An Author
-          </Link>
-        </div>
-        </nav>
-        <h2>All Authors:</h2>
-
-        {authors.map((author) => {
-          const { _id, name } =
-            author;
-
-          return (
-            <div key={_id} className="shadow mb-4 rounded border p-4">
-              <Link to={`/authors/${_id}`}>
-                <h4>{name}</h4>
-              </Link>
-              <div className="mt-2">
-                <button
-                  onClick={(e) => {
-                    handleDeleteClick(_id);
-                  }}
-                  className="btn btn-sm btn-outline-danger mx-1"
-                >
-                  Delete
-                </button>
-
-                <Link
-                  to={`/authors/${_id}/edit`}
-                  className="btn btn-sm btn-outline-warning mx-1"
-                >
-                  Edit
-                </Link>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-
-*/
